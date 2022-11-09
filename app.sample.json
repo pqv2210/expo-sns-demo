@@ -3,7 +3,7 @@
     "name": "expo-sns-demo",
     "slug": "expo-sns-demo",
     "scheme": "expo-sns-demo",
-    "facebookScheme": "fb488741899817203",
+    "facebookScheme": "fb_app_fb_id",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
