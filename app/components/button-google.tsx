@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+  Alert,
   Image,
   ImageStyle,
   Text,
@@ -19,10 +20,19 @@ export const ButtonGoogle = () => {
     androidClientId: Config.ANDROID_CLIENT_ID,
   });
 
+  const onGetEmail = async (accessToken: string) => {
+    await fetch(Config.GG_GET_EMAIL_URL + accessToken)
+      .then((response) => response.json())
+      .then((info) => {
+        Alert.alert("Email", info.email);
+      })
+      .catch((e) => console.log(e));
+  };
+
   React.useEffect(() => {
     if (response?.type === "success") {
       const { authentication } = response;
-      console.log("authentication", authentication);
+      onGetEmail(authentication.accessToken);
     }
   }, [response]);
 
