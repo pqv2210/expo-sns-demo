@@ -58,6 +58,7 @@ export const ButtonFaceBook = () => {
 };
 
 const BTN: ViewStyle = {
+  width: "65%",
   flexDirection: "row",
   alignItems: "center",
   backgroundColor: colors.mariner,
